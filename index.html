@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILD FRONTIER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading">
+        <h1>🌲 WILD FRONTIER</h1>
+        <p>O‘yin yuklanmoqda...</p>
+    </div>
+
+    <div id="startScreen" class="screen">
+        <div class="menu-card">
+            <div class="logo">🌲 WILD FRONTIER</div>
+            <p class="subtitle">OPEN WORLD SURVIVAL</p>
+            <p class="description">
+                Katta dunyoni o‘rgan, kristallarni yig‘,
+                topshiriqlarni bajar va omon qol!
+            </p>
+            <button id="startBtn" class="main-btn">▶ O‘YINNI BOSHLASH</button>
+            <p class="small">PC: WASD • Yugurish: SHIFT • Sakrash: SPACE</p>
+        </div>
+    </div>
+
+    <div id="hud">
+        <div class="top-info">
+            <div class="game-name">🌲 WILD FRONTIER</div>
+            <div id="timeText">☀️ KUN</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">❤️ <span id="health">100</span></div>
+            <div class="stat">🍗 <span id="food">100</span></div>
+            <div class="stat">💧 <span id="water">100</span></div>
+            <div class="stat">💎 <span id="crystals">0</span></div>
+            <div class="stat">🪵 <span id="wood">0</span></div>
+        </div>
+
+        <div class="quest-box">
+            <b>📜 TOPSHIRIQLAR</b>
+            <p id="questText">Kristallarni toping: 0/5</p>
+            <p id="levelText">Daraja: 1 | XP: 0</p>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="bottom-info">
+            <span>WASD — Harakat</span>
+            <span>SHIFT — Yugurish</span>
+            <span>SPACE — Sakrash</span>
+            <span>E — Yig‘ish</span>
+        </div>
+    </div>
+
+    <div id="mobileControls">
+        <div class="mobile-pad">
+            <button data-move="forward">▲</button>
+            <div>
+                <button data-move="left">◀</button>
+                <button data-move="back">▼</button>
+                <button data-move="right">▶</button>
+            </div>
+        </div>
+
+        <div class="mobile-actions">
+            <button id="jumpBtn">⬆</button>
+            <button id="runBtn">🏃</button>
+            <button id="collectBtn">✋</button>
+        </div>
+    </div>
+
+    <button id="pauseBtn">Ⅱ</button>
+
+    <div id="pauseScreen" class="screen hidden">
+        <div class="menu-card">
+            <h1>⏸ PAUZA</h1>
+            <button id="resumeBtn" class="main-btn">▶ DAVOM ETISH</button>
+            <button id="restartBtn" class="secondary-btn">↻ QAYTA BOSHLASH</button>
+        </div>
+    </div>
+
+    <div id="errorBox"></div>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #07130c;
+    color: white;
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #06140cdd, #101d2bee);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menu-card {
+    width: min(90%, 450px);
+    padding: 35px 25px;
+    text-align: center;
+    background: #101b18e8;
+    border: 1px solid #72d99b55;
+    border-radius: 22px;
+    box-shadow: 0 15px 60px #0009;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: #8cffae;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: #a9c9b3;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.description {
+    margin: 25px 0;
+    line-height: 1.6;
+    color: #d0e4d5;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.main-btn,
+.secondary-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.main-btn {
+    background: linear-gradient(120deg, #159447, #43d779);
+}
+
+.secondary-btn {
+    background: #344b40;
+}
+
+.main-btn:active,
+.secondary-btn:active {
+    transform: scale(.97);
+}
+
+.small {
+    margin-top: 20px;
+    color: #a6b8aa;
+    font-size: 11px;
+}
+
+#loading {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #07130c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loading h1 {
+    color: #8cffae;
+}
+
+#hud {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+    text-shadow: 0 2px 5px #000;
+}
+
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    font-weight: bold;
+}
+
+.game-name {
+    color: #9dffb7;
+}
+
+.stats {
+    display: flex;
+    gap: 8px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    padding: 9px 12px;
+    border-radius: 10px;
+    background: #07150dcc;
+    border: 1px solid #ffffff22;
+}
+
+.quest-box {
+    position: absolute;
+    right: 15px;
+    top: 95px;
+    width: 220px;
+    padding: 14px;
+    background: #07150dcc;
+    border: 1px solid #ffffff33;
+    border-radius: 12px;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+#message {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #06150ddd;
+    color: #a5ffba;
+    opacity: 0;
+    transition: opacity .3s;
+    text-align: center;
+}
+
+.bottom-info {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #e0eee2;
+    white-space: nowrap;
+}
+
+#pauseBtn {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 15;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #14251cdd;
+    font-size: 18px;
+}
+
+#mobileControls {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    justify-content: space-between;
+    align-items: end;
+    pointer-events: none;
+}
+
+.mobile-pad,
+.mobile-actions {
+    pointer-events: auto;
+}
+
+.mobile-pad button,
+.mobile-actions button {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #10251bdc;
+    border: 1px solid #aaffbb66;
+    font-size: 20px;
+    margin: 3px;
+}
+
+.mobile-pad {
+    text-align: center;
+}
+
+.mobile-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+#runBtn {
+    background: #126c3a;
+}
+
+#collectBtn {
+    background: #a36b14;
+}
+
+#errorBox {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    inset: 15px;
+    padding: 20px;
+    background: #310d0d;
+    color: white;
+    border: 1px solid red;
+    border-radius: 12px;
+    white-space: pre-wrap;
+    overflow: auto;
+}
+
+@media (max-width: 700px) {
+    .quest-box {
+        top: 130px;
+        right: 10px;
+        width: 165px;
+        font-size: 11px;
+    }
+
+    .stat {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    .bottom-info {
+        display: none;
+    }
+
+    #mobileControls {
+        display: flex;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #mobileControls {
+        display: flex;
+    }
+}
